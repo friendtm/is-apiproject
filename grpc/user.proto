@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package user;
+
+service UserService {
+  rpc GetAllUsers(Empty) returns (stream User);
+  rpc AddUser(User) returns (Status);
+  rpc DeleteUser(UserEmail) returns (Status);
+}
+
+message Empty {}
+
+message User {
+  string name = 1;
+  string email = 2;
+}
+
+message UserEmail {
+  string email = 1;
+}
+
+message Status {
+  bool ok = 1;
+  string message = 2;
+}
