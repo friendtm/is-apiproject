@@ -14,7 +14,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Expose only the port relevant to this service
-EXPOSE 5000
+EXPOSE 5002
 
 # Default command (this should be adjusted per service Dockerfile)
-CMD ["python", "rest_api.py"]
+CMD ["python", "graphqlapi_server.py"]
