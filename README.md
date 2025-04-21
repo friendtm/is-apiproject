@@ -54,43 +54,45 @@ All services are currently **online** and can be accessed via **Python clients**
 
 ### ❌ Delete User
 
-Method: DELETE
-URL: http://35.180.79.93:5000/users?email=apagaruser@email.com
+**Method:** DELETE
+**URL:** http://35.180.79.93:5000/users?email=apagaruser@email.com
 
 ---
 
 ### ⬇️ Export Users
 
-Method: GET
-URL: http://35.180.79.93:5000/export?format=xml
+**Method:** GET
+**URL:** http://35.180.79.93:5000/export?format=xml
 
 ---
 
 ### ⬆️ Import Users
 
-Method: GET
-URL: http://35.180.79.93:5000/import?format=xml
+**Method:** GET
+**URL:** http://35.180.79.93:5000/import?format=xml
 
 ---
 
 ### 🧼 SOAP API (Port 5001)
 
-Method: POST
-URL: http://35.180.79.93:5001/soap
-Headers: Content-Type: text/xml
-Body (Raw XML):
+**Method:**: POST
+**URL:** http://35.180.79.93:5001/soap
+**Headers:** Content-Type: text/xml
 
+**Body (Raw XML):**
+```xml
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
    <soapenv:Body>
       João
    </soapenv:Body>
 </soapenv:Envelope>
+```
 
 ---
 
 ### 🧬 GraphQL API (Port 5002)
 
-URL: http://35.180.79.93:5002/graphql
+**URL:** http://35.180.79.93:5002/graphql
 Recommended Tool: GraphQL Playground
 
 ---
