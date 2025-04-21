@@ -93,7 +93,7 @@ All services are currently **online** and can be accessed via **Python clients**
 ### 🧬 GraphQL API (Port 5002)
 
 **URL:** http://35.180.79.93:5002/graphql  
-Recommended Tool: GraphQL Playground
+**Recommended Tool:** GraphQL Playground
 
 ---
 
@@ -103,8 +103,9 @@ Recommended Tool: GraphQL Playground
 
 **🔧 gRPC Setup (Python)**  
 Before using the gRPC client, compile the user.proto file:  
-
+```cmd
 python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. user.proto  
+```
 
 Once compiled, you can run the gRPC client to interact with the server.  
 
