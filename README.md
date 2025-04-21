@@ -54,32 +54,32 @@ All services are currently **online** and can be accessed via **Python clients**
 
 ### ❌ Delete User
 
-**Method:** DELETE
-**URL:** http://35.180.79.93:5000/users?email=apagaruser@email.com
+**Method:** DELETE  
+**URL:** http://35.180.79.93:5000/users?email=apagaruser@email.com  
 
 ---
 
 ### ⬇️ Export Users
 
-**Method:** GET
-**URL:** http://35.180.79.93:5000/export?format=xml
+**Method:** GET  
+**URL:** http://35.180.79.93:5000/export?format=xml  
 
 ---
 
 ### ⬆️ Import Users
 
-**Method:** GET
-**URL:** http://35.180.79.93:5000/import?format=xml
+**Method:** GET  
+**URL:** http://35.180.79.93:5000/import?format=xml  
 
 ---
 
 ### 🧼 SOAP API (Port 5001)
 
-**Method:**: POST
-**URL:** http://35.180.79.93:5001/soap
-**Headers:** Content-Type: text/xml
+**Method:** POST  
+**URL:** http://35.180.79.93:5001/soap  
+**Headers:** Content-Type: text/xml  
 
-**Body (Raw XML):**
+**Body (Raw XML):**  
 ```xml
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
    <soapenv:Body>
@@ -92,28 +92,28 @@ All services are currently **online** and can be accessed via **Python clients**
 
 ### 🧬 GraphQL API (Port 5002)
 
-**URL:** http://35.180.79.93:5002/graphql
+**URL:** http://35.180.79.93:5002/graphql  
 Recommended Tool: GraphQL Playground
 
 ---
 
 ### 🚀 gRPC API (Port 5003)
 
-Note: gRPC is not supported on the free version of Postman. Use the provided Python Client instead.
+**Note:** gRPC is not supported on the free version of Postman. Use the provided Python Client instead.  
 
-🔧 gRPC Setup (Python)
-Before using the gRPC client, compile the user.proto file:
+**🔧 gRPC Setup (Python)**  
+Before using the gRPC client, compile the user.proto file:  
 
-python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. user.proto
+python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. user.proto  
 
-Once compiled, you can run the gRPC client to interact with the server.
-
----
-
-### 🐍 Python Clients
-All APIs have a console-based Python client. Make sure the services are running and accessible via the IP and ports provided above.
+Once compiled, you can run the gRPC client to interact with the server.  
 
 ---
 
-### 🐳 Docker Deployment
-All services are containerized and orchestrated with Docker Compose for easy deployment on Ubuntu EC2 instances.
+### 🐍 Python Clients  
+All APIs have a console-based Python client. Make sure the services are running and accessible via the IP and ports provided above.  
+
+---
+
+### 🐳 Docker Deployment  
+All services are containerized and orchestrated with Docker Compose for easy deployment on Ubuntu EC2 instances.  
