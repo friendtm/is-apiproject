@@ -48,7 +48,7 @@ All services are currently **online** and can be accessed via **Python clients**
   "name": "Nome_novo_user",
   "email": "Email_novo_user"
 }
-
+```
 ---
 
 
