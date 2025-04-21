@@ -1,48 +1,117 @@
-# is-apiproject
-API Server e Client (REST, SOAP, GraphQL, gRPC) orquestrado com Dockers.
-Servidor Ubuntu corre numa instancia EC2 da Amazon Free Tier.
-Os serviços encontram-se online. É portanto possivel a utilização dos mesmos com os clientes python desenvolvidos ou através do Postman.
+# 🧩 Distributed User API Platform
 
-IP Servidor: http://35.180.79.93/
-Serviços:
- - :5000 (Rest - /users dá acesso ao users.json)
- - :5001 (Soap)
- - :5002/graphql (GraphQL)
- - :5003 (gRPC)
+This project provides a complete user management platform with **multi-protocol API support**, developed and deployed on a **Docker-orchestrated Ubuntu server running on Amazon EC2 (Free Tier)**.
 
-Clientes criados em Python e a funcionar em Consola. GUI não disponivel.
+It includes the following API technologies:
 
-Para utilizar o cliente grpc, é necessário compilar o ficheiro 'user.proto'.
-Executar este comando na pasta onde se encontra o 'user.proto':
-python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. user.proto
+- 🌐 REST (Flask)
+- 🧼 SOAP
+- 🧬 GraphQL
+- 🚀 gRPC
+
+All services are currently **online** and can be accessed via **Python clients** (console-based) or tools such as **Postman** (excluding gRPC).
+
+---
+
+## 🖥️ Server Information
+
+**Server IP:** [http://35.180.79.93](http://35.180.79.93)  
+**Note:** Make sure relevant ports are open on your local network if testing with clients.
+
+### 🔌 API Endpoints
+
+| API      | Port  | URL                                  | Description                            |
+|----------|-------|--------------------------------------|----------------------------------------|
+| REST     | 5000  | http://35.180.79.93:5000             | Access via Postman or Python Client    |
+| SOAP     | 5001  | http://35.180.79.93:5001/soap        | Send XML requests                      |
+| GraphQL  | 5002  | http://35.180.79.93:5002/graphql     | Use GraphQL Playground or Postman Pro  |
+| gRPC     | 5003  | N/A                                  | Requires Python Client (see below)     |
+
+---
+
+## 📦 REST API (Port 5000)
+
+### 📥 Get All Users
+
+**Method:** `GET`  
+**URL:** `http://35.180.79.93:5000/users`
+
+---
+
+### ➕ Add User
+
+**Method:** `POST`  
+**URL:** `http://35.180.79.93:5000/users`  
+**Body (Raw JSON):**
+```json
+{
+  "name": "Nome_novo_user",
+  "email": "Email_novo_user"
+}
+
+---
 
 
-POSTMAN:
-###############################
- - REST API
-   - GetAllUsers -> Método: GET | http://35.180.79.93:5000/users
-   - Add User -> Método: POST | http://35.180.79.93:5000/users | Body -> Raw -> JSON -> {"name": "Nome_novo_user", "email": "Email_novo_user"}
-   - Delete -> Método: DELETE | http://35.180.79.93:5000/users?email=apagaruser@email.com (Colocar email do user que pretende apagar)
-   - Export -> Método: GET | http://35.180.79.93:5000/export?format=xml
-   - Import -> Método: GET | http://35.180.79.93:5000/import?format=xml
-   - 
-###############################
- - SOAP API
-   - Método: POST | http://35.180.79.93:5001/soap | Body -> Raw -> XML:
+### ❌ Delete User
 
+Method: DELETE
+URL: http://35.180.79.93:5000/users?email=apagaruser@email.com
+
+---
+
+### ⬇️ Export Users
+
+Method: GET
+URL: http://35.180.79.93:5000/export?format=xml
+
+---
+
+### ⬆️ Import Users
+
+Method: GET
+URL: http://35.180.79.93:5000/import?format=xml
+
+---
+
+### 🧼 SOAP API (Port 5001)
+
+Method: POST
+URL: http://35.180.79.93:5001/soap
 Headers: Content-Type: text/xml
+Body (Raw XML):
 
-<?xml version="1.0"?>
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
-    <soapenv:Body>
-        <GetHello xmlns="http://schemas.xmlsoap.org/soap/envelope/">
-            <name>João</name>
-        </GetHello>
-    </soapenv:Body>
+   <soapenv:Body>
+      João
+   </soapenv:Body>
 </soapenv:Envelope>
 
-###############################
- - GRAPHQL API: Utilizar GraphQL Playground -> http://35.180.79.93:5002/graphql
+---
 
-###############################
- - gRPC: A versão grátis do Postman não suporta gRPC. Testar apartir do cliente disponibilizado.
+### 🧬 GraphQL API (Port 5002)
+
+URL: http://35.180.79.93:5002/graphql
+Recommended Tool: GraphQL Playground
+
+---
+
+### 🚀 gRPC API (Port 5003)
+
+Note: gRPC is not supported on the free version of Postman. Use the provided Python Client instead.
+
+🔧 gRPC Setup (Python)
+Before using the gRPC client, compile the user.proto file:
+
+python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. user.proto
+
+Once compiled, you can run the gRPC client to interact with the server.
+
+---
+
+### 🐍 Python Clients
+All APIs have a console-based Python client. Make sure the services are running and accessible via the IP and ports provided above.
+
+---
+
+### 🐳 Docker Deployment
+All services are containerized and orchestrated with Docker Compose for easy deployment on Ubuntu EC2 instances.
