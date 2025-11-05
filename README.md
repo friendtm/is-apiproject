@@ -12,17 +12,13 @@ It includes the following API technologies:
 ---
 
 ## 🖥️ Server Information
-
-**Server IP:** [http://35.180.79.93](http://35.180.79.93)  
-**Note:** Make sure relevant ports are open on your local network if testing with clients.
-
 ### 🔌 API Endpoints
 
 | API      | Port  | URL                                  | Description                            |
 |----------|-------|--------------------------------------|----------------------------------------|
-| REST     | 5000  | http://35.180.79.93:5000             | Access via Postman or Python Client    |
-| SOAP     | 5001  | http://35.180.79.93:5001/soap        | Send XML requests                      |
-| GraphQL  | 5002  | http://35.180.79.93:5002/graphql     | Use GraphQL Playground or Postman Pro  |
+| REST     | 5000  | http://xx.xx.xx.xx:5000              | Access via Postman or Python Client    |
+| SOAP     | 5001  | http://xx.xx.xx.xx:5001/soap         | Send XML requests                      |
+| GraphQL  | 5002  | http://xx.xx.xx.xx:5002/graphql      | Use GraphQL Playground or Postman Pro  |
 | gRPC     | 5003  | N/A                                  | Requires Python Client (see below)     |
 
 ---
@@ -32,19 +28,19 @@ It includes the following API technologies:
 ### 📥 Get All Users
 
 **Method:** `GET`  
-**URL:** `http://35.180.79.93:5000/users`
+**URL:** `http://xx.xx.xx.xx:5000/users`
 
 ---
 
 ### ➕ Add User
 
 **Method:** `POST`  
-**URL:** `http://35.180.79.93:5000/users`  
+**URL:** `http://xx.xx.xx.xx:5000/users`  
 **Body (Raw JSON):**
 ```json
 {
-  "name": "Nome_novo_user",
-  "email": "Email_novo_user"
+  "name": "user_name",
+  "email": "username@example.com"
 }
 ```
 ---
@@ -53,35 +49,35 @@ It includes the following API technologies:
 ### ❌ Delete User
 
 **Method:** DELETE  
-**URL:** http://35.180.79.93:5000/users?email=apagaruser@email.com  
+**URL:** http://xx.xx.xx.xx:5000/users?email=username@example.com  
 
 ---
 
 ### ⬇️ Export Users
 
 **Method:** GET  
-**URL:** http://35.180.79.93:5000/export?format=xml  
+**URL:** http://xx.xx.xx.xx:5000/export?format=xml  
 
 ---
 
 ### ⬆️ Import Users
 
 **Method:** GET  
-**URL:** http://35.180.79.93:5000/import?format=xml  
+**URL:** http://xx.xx.xx.xx:5000/import?format=xml  
 
 ---
 
 ### 🧼 SOAP API (Port 5001)
 
 **Method:** POST  
-**URL:** http://35.180.79.93:5001/soap  
+**URL:** http://xx.xx.xx.xx:5001/soap  
 **Headers:** Content-Type: text/xml  
 
 **Body (Raw XML):**  
 ```xml
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
    <soapenv:Body>
-      João
+      John
    </soapenv:Body>
 </soapenv:Envelope>
 ```
@@ -90,7 +86,7 @@ It includes the following API technologies:
 
 ### 🧬 GraphQL API (Port 5002)
 
-**URL:** http://35.180.79.93:5002/graphql  
+**URL:** http://xx.xx.xx.xx:5002/graphql  
 **Recommended Tool:** GraphQL Playground
 
 ---
@@ -110,7 +106,7 @@ Once compiled, you can run the gRPC client to interact with the server.
 ---
 
 ### 🐍 Python Clients  
-All APIs have a console-based Python client. Make sure the services are running and accessible via the IP and ports provided above.  
+All APIs have a console-based Python client.
 
 ---
 
