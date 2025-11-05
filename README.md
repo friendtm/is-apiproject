@@ -9,8 +9,6 @@ It includes the following API technologies:
 - 🧬 GraphQL
 - 🚀 gRPC
 
-All services are currently **online** and can be accessed via **Python clients** (console-based) or tools such as **Postman** (excluding gRPC).
-
 ---
 
 ## 🖥️ Server Information
