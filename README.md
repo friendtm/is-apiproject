@@ -1,6 +1,6 @@
 # 🧩 Distributed User API Platform
 
-This project provides a complete user management platform with **multi-protocol API support**, developed and deployed on a **Docker-orchestrated Ubuntu server running on Amazon EC2 (Free Tier)**.
+This project provides a simple user management platform with **multi-protocol API support**, developed and deployed on a **Docker-orchestrated Ubuntu server running on Amazon EC2 (Free Tier)**.
 
 It includes the following API technologies:
 
